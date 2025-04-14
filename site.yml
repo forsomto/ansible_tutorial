@@ -17,12 +17,21 @@
 
 
 
-  - name: install apache and php for Ubuntu servers
+  - name: install apache and apache2 for Ubuntu servers
     tags: apache,apache2,ubuntu
     apt:
       name:
         - apache2
-        - libapache2-mod-php
+        - php
       state: latest
+
+  - name: copy default html file for site
+    tags: apaache,apache2,httpd
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
 
 
