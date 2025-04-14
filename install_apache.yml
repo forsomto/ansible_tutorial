@@ -4,16 +4,14 @@
   become: true
   tasks:
 
-  - name: update repsitory index
-    apt:
+
+
+  - name: install apache and php for Ubuntu servers
+    package:
+      name:
+        - apache2
+        - libapache2-mod-php
+      state: latest
       update_cache: yes
 
-  - name: install apache2 package
-    apt:
-      name: apache2
-      state: latest
 
-  - name: add php support for apache
-    apt:
-      name: libapache2-mod-php
-      state: latest
