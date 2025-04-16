@@ -1,6 +1,6 @@
 [web_servers]
-server1@192.168.1.201
+server1@192.168.13.144
 
 
 [workstations]
-192.168.1.30
+192.168.13.237
